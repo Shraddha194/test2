@@ -1,0 +1,36 @@
+<div *ngIf="flag">
+  <div class="d-flex align-items-center">
+    <strong>Loading...</strong>
+    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><input type="checkbox"></th>
+      <th>Hotel- Id</th>
+      <th>Hotel-Name</th>
+      <th>Owner-Name</th>
+      <th>Contact-No</th>
+      <th>Email-Id</th>
+      <th>...</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of arrData">
+      <td><input type="checkbox" (change)="checkbox(item)"></td>
+      <td>{{item.hotel_id}}</td>
+      <td>{{item.hotel_name}}</td>
+      <td>{{item.owner_name}}</td>
+      <td>{{item.contact_no}}</td>
+      <td>{{item.email}}</td>
+      <td><button (click)="onViewData(item)" class="btn btn-primary">View More</button></td>
+      <td> <button (click)="onHotelEdit(item)" class="btn btn-success">Edit</button> |
+        <button (click)="onHotelDelete(item)" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+    <button (click)="onDeleteAll()">Delete All</button>
+  </tbody>
+</table>

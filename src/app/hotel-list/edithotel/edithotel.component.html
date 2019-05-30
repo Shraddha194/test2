@@ -1,0 +1,85 @@
+<div class="container">
+
+  <form [formGroup]="hoteleditform" (ngSubmit)="onHotelEdit()">
+    <div class="row">
+      <div class="col-md-6">
+        <input type="number" formControlName="hotel_id" class="form-control" placeholder="Enter Hotel Id">
+        <input type="text" formControlName="hotel_name" class="form-control" placeholder="Enter Hotel Name">
+        <input type="text" formControlName="owner_name" class="form-control" placeholder="Enter Owner Name">
+        <input type="text" formControlName="contact_no" class="form-control" placeholder="Enter Contact Number">
+        <input type="text" formControlName="email" class="form-control" placeholder="Enter Email-ID">
+        <input type="radio" formControlName="star_category" value="nmarked">Unmarked
+        <input type="radio" formControlName="star_category" value="star1">star1
+        <input type="radio" formControlName="star_category" value="star2">star2
+        <input type="radio" formControlName="star_category" value="star3">star3
+        <input type="radio" formControlName="star_category" value="star4">star4
+        <input type="radio" formControlName="star_category" value="star5">star5
+        <input type="text" formControlName="group_name" class="form-control" placeholder="Enter Group Name">
+        <input type="text" formControlName="copyright_by" class="form-control" placeholder="Enter CopyRight Name">
+        <select formControlName="ownership_type" class="form-control">
+          <option>Select Ownership-Type</option>
+          <option>Private</option>
+          <option>Owned</option>
+          <option>Managed</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <input type="text" formControlName="address" class="form-control" placeholder="Enter Hotel Address">
+        <input type="text" formControlName="landmark" class="form-control" placeholder="Enter Landmark">
+        <input type="number" formControlName="pincode" class="form-control" placeholder="Enter Pincode">
+        <select formControlName="city" class="form-control">
+          <option>Select-City</option>
+          <option>Ahemdabad</option>
+          <option>Rajkot</option>
+          <option>Surat</option>
+        </select>
+        <select formControlName="state" class="form-control">
+          <option>Select-State</option>
+          <option>Gujrat</option>
+          <option>Rajsthan</option>
+          <option>Maharashtra</option>
+        </select>
+        <select formControlName="country" class="form-control">
+          <option>Select-Country</option>
+          <option>India</option>
+          <option>Canada</option>
+          <option>USA</option>
+        </select>
+        <input type="text" formControlName="website" class="form-control" placeholder="Enter Website">
+      </div>
+    </div>
+    <hr>
+    <h3>Add Contact Person Detail</h3>
+    <div class="row">
+      <div class="col-md-6">
+          <input type="text" formControlName="pfirstname" class="form-control" placeholder="Enter First Name">
+          <input type="text" formControlName="plastname" class="form-control" placeholder="Enter Last Name">
+          <input type="text" formControlName="pdesignation" class="form-control" placeholder="Enter Designation">
+      </div>
+        <div class="col-md-6">
+          <input type="text" formControlName="pemail" class="form-control" placeholder="Enter Contact Number">
+          <input type="text" formControlName="pcontact_no" class="form-control" placeholder="Enter Email-ID">
+      </div>
+    </div>
+    <hr>
+    <h3>Contract Detail</h3>
+    <div class="row">
+      <div class="col-md-6">
+          <select formControlName="package_type" class="form-control">
+            <option>Select Package Type</option>
+            <option>WhiteLabel</option>
+            <option>Cloud Based</option>
+          </select>
+          <input type="number" formControlName="pay_charge" class="form-control" placeholder="Enter Payble Charge">
+          <input type="text" formControlName="package_name" class="form-control" placeholder="Enter Package Name">
+      </div>
+      <div class="col-md-6">
+          <input type="date" formControlName="valid_form" class="form-control">
+          <input type="date" formControlName="valid_to" class="form-control">
+          <input type="number" formControlName="days" class="form-control" placeholder="Enter Days">
+      </div>
+    </div>
+    <button [disabled]="hoteleditform.invalid" type="submit" class="btn btn-primary">Edit</button>
+  </form>
+
+</div>
